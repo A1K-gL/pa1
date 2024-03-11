@@ -1,0 +1,18 @@
+Úkolem je realizovat funkci (ne celý program, pouze funkci), která bude počítat velikost území, které může ovládat vhodně umístěný hrad.
+
+Předpokládáme mapu čtvercového tvaru. Mapa je rozdělena na n x n čtverců, pro každý čtverec známe jeho nadmořskou výšku. Předpokládáme, že čtverce jsou vodorovné, ke změně nadmořské výšky dochází skokově na jejich hranici. Na libovolný čtverec lze umístit hrad, hrad zabírá vždy jeden celý čtverec. Hrad ovládá území obdélníkového tvaru, pro ovládané území musí platit:
+
+hrad je uvnitř obdélníku ovládaného území,
+hrad je umístěn v nejvyšším bodě ovládaného území, tj. všechny ostatní čtverce v ovládaném území mají nižší nadmořskou výšku,
+hrad se snaží ovládnout co největší území.
+Úkolem je realizovat funkci castleArea. Tato funkce dostane parametrem mapu s nadmořskými výškami (2D pole) a rozměr mapy. Funkce pro každý čtverec mapy vypočte, jak velké území by ovládal hrad umístěný na daném místě.
+
+void castleArea ( int altitude[][MAP_MAX], int size, int area[][MAP_MAX] )
+Funkce pro výpočet velikosti ovládaného území. Parametry jsou:
+altitude vstupní parametr - 2D pole s vyplněnými nadmořskými výškami. Pole má vyplněné prvky [0][0] až [size-1][size-1]. Nadmořské výšky jsou určené pouze ke čtení, funkce obsah pole nesmí měnit.
+size - velikost zpracovávané mapy. Mapa je čtvercového tvaru size x size.
+area výstupní parametr, do prvku area[y][x] umístí funkce maximální velikost území, které by ovládal hrad na pozici [y][x]. Funkce bude vyplňovat pouze prvky [0][0] až [size-1][size-1].
+bool identicalMap ( int a[][MAP_MAX], int b[][MAP_MAX], int size )
+Funkce pro porovnání obsahu dvou map. Tato funkce není volána z testovacího prostředí, ale je potřeba ji implementovat pro správnou funkci dodaných testů. Funkce porovná 2D pole a a b. Porovnává se pouze výřez těchto polí [0][0] až [size-1][size-1]. Funkce vrátí true pokud pole mají v tomto výřezu stejný obsah nebo false, pokud se obsahy výřezů liší.
+constexpr int MAP_MAX = 200;
+je symbolická konstanta deklarovaná v testovacím prostředí. Udává maximální velikost zpracovávané mapy.

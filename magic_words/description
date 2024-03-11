@@ -1,0 +1,24 @@
+Úkolem je vytvořit program, který bude generovat silná kouzla.
+
+Na vstupu programu je seznam slov. Slova jsou tvořena libovolnými znaky, bílé znaky jsou oddělovače slov. Zadávání slov skončí po dosažení konce vstupu (EOF).
+
+Úkolem programu je změnit pořadí slov na vstupu tak, aby slova tvořila co nejsilnější kouzlo. Síla kouzla se určí tak, že se vezmou všechna slova kouzla a vynechají se bílé znaky a všechna písmena kouzla se změní na malá. Kouzlo je tím silnější, čím je větší takto vzniklý řetězec (lexikograficky větší). Například slova Lorem ipSum dolOR lze uspořádat následujícími způsoby:
+
+Lorem ipSum dolOR  => loremipsumdolor
+Lorem dolOR ipSum  => loremdoloripsum
+ipSum dolOR Lorem  => ipsumdolorlorem
+ipSum Lorem dolOR  => ipsumloremdolor
+dolOR Lorem ipSum  => dolorloremipsum
+dolOR ipSum Lorem  => doloripsumlorem
+a z nich je nejsilnější (lexikograficky největší) varianta loremipsumdolor, tedy odpovědí je Lorem ipSum dolOR.
+
+Výstupem programu je nalezená kombinace slov tvořící nejsilnější kouzlo. Pokud je stejně silných kombinací více, bude upřednostněna taková kombinace slov, kde delší slova předcházejí kratší slova. To je vidět v ukázkovém běhu číslo 3. Výstup bude navíc úhledně zformátován:
+
+slova budou oddělena právě jednou mezerou,
+před prvním a za posledním slovem nebude žádný zbytečný bílý znak navíc,
+řádka výstupu bude co nejdelší, ale nepřekročí 80 znaků (včetně mezer),
+pokud je nějaké slovo delší než 80 znaků, bude celé zobrazeno na jedné samostatné řádce.
+Pokud je vstup neplatný, program to musí detekovat, zobrazit chybové hlášení a ukončit se. Chybové hlášení zobrazujte na standardní výstup (ne na chybový výstup). Za chybu považujte:
+
+na vstupu není zadané žádné slovo,
+stejné slovo je na vstupu zadané vícekrát (nerozlišujeme malá/velká písmena).
